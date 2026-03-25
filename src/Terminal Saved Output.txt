@@ -1,0 +1,21 @@
+Last login: Thu Mar 26 02:18:25 on ttys000
+anvittripathy@Anvits-MacBook-Air frontend % git log --oneline
+437f281 (HEAD -> main, origin/main) fix api url
+7010886 frontend initial
+anvittripathy@Anvits-MacBook-Air frontend % git checkout <commit_id> -- src/App.js   
+zsh: no such file or directory: commit_id
+anvittripathy@Anvits-MacBook-Air frontend % git checkout <437f281> -- src/App.jsx
+zsh: no such file or directory: 437f281
+anvittripathy@Anvits-MacBook-Air frontend % git checkout 437f281 -- src/App.jsx
+anvittripathy@Anvits-MacBook-Air frontend % git checkout 7010886a822f4262b2b78f17f681664f0de1a0f6 -- src/App.jsx
+anvittripathy@Anvits-MacBook-Air frontend % 
+anvittripathy@Anvits-MacBook-Air frontend % 
+anvittripathy@Anvits-MacBook-Air frontend % 
+
+
+
+
+
+
+
+
