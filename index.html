@@ -703,31 +703,6 @@ async function sendMsg() {
   input.value = '';
 
   addMsg(text, 'user');
-
-  try {
-    const res = await fetch("https://signworld-backend.onrender.com/api/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        prompt: text
-      })
-    });
-
-    const data = await res.json();
-    addMsg(data.text || "No response", 'ai');
-
-  } catch (e) {
-    addMsg("❌ Error connecting", 'ai');
-  }
-}
-  const input = document.getElementById('chat-input');
-  const text = input.value.trim();
-  if (!text) return;
-  input.value = '';
-
-  addMsg(text, 'user');
   hideError();
   document.getElementById('send-btn').disabled = true;
 
