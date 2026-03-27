@@ -717,20 +717,16 @@ async function sendMsg() {
   scrollChat();
 
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: SYSTEM_PROMPT,
-        messages: conversationHistory
-      })
-    });
-
+    const res = await fetch("https://signworld-backend.onrender.com/api/chat", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "x-api-key": "123"
+  },
+  body: JSON.stringify({
+    prompt: text
+  })
+});
     typing.remove();
 
     if (!res.ok) {
@@ -744,7 +740,7 @@ async function sendMsg() {
     }
 
     const data = await res.json();
-    const reply = data.content?.[0]?.text || 'Hmm, I had trouble with that. Try again!';
+    const reply = data.text || 'Hmm, I had trouble with that. Try again!';
 
     // Append assistant turn to history
     conversationHistory.push({ role: 'assistant', content: reply });
